@@ -4,6 +4,7 @@ A Java Swing vocabulary learning application
 ### Team Members
 - Zihan Chen
 - Maria Sidorovych
+- Jin Tao Shen Lin
 ---
 
 ## Project Description
