@@ -2,6 +2,7 @@
 A Java Swing vocabulary learning application
 
 ### Team Members
+- Zihan Chen
 - 
 ---
 
@@ -9,8 +10,7 @@ A Java Swing vocabulary learning application
 ### Domain
 Desktop vocabulary learning application designed to help students expand their vocabulary and improve their long-term retention of unfamiliar words. Learners can discover word definitions, save vocabulary to a personal library, study using interactive flashcards, and assess their understanding through multiple-choice quizzes.
 
-A key feature of LexiLoop is personalized review. The application records a learner's quiz performance and identifies words they frequently answer incorrectly. Learners can then focus their review sessions on words they find most difficult. The goal is to provide a complete learning experience that combines vocabulary discovery, active recall, assessment, and targeted practice.
-
+A key feature of the app is personalized review. The application records a learner's quiz performance and identifies words they frequently answer incorrectly. Learners can then focus their review sessions on words they find most difficult. The goal is to provide a complete learning experience that combines vocabulary discovery, active recall, assessment, and targeted practice.
 
 ---
 ## User Stories
@@ -21,9 +21,13 @@ As a vocabulary learner, I want to search for unfamiliar words and save their de
 ### User Story 2: Flashcard Study
 
 As a vocabulary learner, I want to study saved words using interactive flashcards so I can improve my ability to recall their meanings.
+
 ### User Story 3: Vocabulary Quiz
+
 As a vocabulary learner, I want to complete multiple-choice quizzes using my saved words so I can assess my understanding and see my results.
+
 ### User Story 4: Adaptive Review
+
 As a vocabulary learner, I want the application to identify words I frequently answer incorrectly and prioritize them in review sessions so I can focus on improving my weaknesses.
 
 ---
@@ -101,4 +105,3 @@ The application is planned to use local JSON files to save and retrieve:
 [Instructions for running the program.]
 ---
 ## Notes
-[Any addi
