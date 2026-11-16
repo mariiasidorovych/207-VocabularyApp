@@ -4,7 +4,6 @@ A Java Swing vocabulary learning application
 ### Team Members
 - Zihan Chen
 - Maria Sidorovych
-- Jin Tao Shen Lin
 - Edvart Kjoell
 ---
 
@@ -75,7 +74,7 @@ Main success scenario:
 ## Minimal Viable Product (MVP)
 | Team Member | MVP Use Case |
 |-------------|--------------|
-| Jin Tao Shen Lin | UC1 — Discover and Save Vocabulary
+| Maria Sidorovych | UC1 — Discover and Save Vocabulary
 | Zihan Chen | UC2 — Flashcard Study
 | Edvart Kjoell | UC3 — Vocabulary Quiz
 | Maria Sidorovych | UC4 — Adaptive Review
