@@ -12,7 +12,7 @@ A Java Swing vocabulary learning application
 ### Domain
 Desktop vocabulary learning application designed to help students expand their vocabulary and improve their long-term retention of unfamiliar words. Learners can discover word definitions, save vocabulary to a personal library, study using interactive flashcards, and assess their understanding through multiple-choice quizzes.
 
-A key feature of the app is personalized review. The application records a learner's quiz performance and identifies words they frequently answer incorrectly. Learners can then focus their review sessions on words they find most difficult. The goal is to provide a complete learning experience that combines vocabulary discovery, active recall, assessment, and targeted practice.
+A key feature of the app is its learning analytics dashboard, which uses saved vocabulary and quiz results to provide insights into a learner's progress. The application tracks quiz performance over time, calculates learning statistics, and visualizes improvements through graphs and charts. This allows learners to better understand their strengths, identify areas for improvement, and monitor their vocabulary development. The goal is to provide a complete learning experience that combines vocabulary discovery, active recall, assessment, and progress analysis.
 
 ---
 ## User Stories
