@@ -28,9 +28,9 @@ As a vocabulary learner, I want to study saved words using interactive flashcard
 
 As a vocabulary learner, I want to complete multiple-choice quizzes using my saved words so I can assess my understanding and see my results.
 
-### User Story 4: Adaptive Review
+### User Story 4: Learning Analytics & Insights
 
-As a vocabulary learner, I want the application to identify words I frequently answer incorrectly and prioritize them in review sessions so I can focus on improving my weaknesses.
+As a vocabulary learner, I want to view statistics, progress trends, and personalized insights based on my saved words and quiz results so I can understand how my vocabulary knowledge is improving.
 
 ---
 ## Use Cases
@@ -62,14 +62,14 @@ Main success scenario:
 - The application displays the final score.
 - The application records the results for future review.
 
-### Use Case 4: Adaptive Review
+### Use Case 4: Learning Analytics & Insights
 Main success scenario:
-- The learner opens the adaptive review screen.
-- The application evaluates the learner's previous performance on saved words.
-- The application prioritizes words that require additional practice.
-- The learner begins a review session with the selected words.
-- The learner studies the words and reveals their definitions.
-- The learner continues until the review session is completed or exited.
+- The learner opens the Learning Analytics Dashboard.
+- The application retrieves saved vocabulary and completed quiz results.
+- The application calculates vocabulary totals, overall accuracy, and quiz performance over time.
+- The application displays the calculated statistics and progress visualizations.
+- The application generates an insight based on the learner's performance.
+- The learner reviews their progress and identifies areas for improvement.
 
 ---
 ## Minimal Viable Product (MVP)
