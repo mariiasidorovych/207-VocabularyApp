@@ -1,15 +1,17 @@
-public class FlashcardInteractor implements FlashcardInputBoundry{
-    private FlashcardUserDataAccessObject userDataAccessObject;
+package use_case.flashcard;
+
+import interface_adaptor.flashcard.FlashcardPresenter;
+
+public class FlashcardInteractor implements FlashcardInputBoundary {
+    private FlashcardUserDataAccessInterface userDataAccessObject;
     private FlashcardPresenter flashcardPresenter;
-    public flashcardInteractor(FlashcardUserDataAccessObject userDataAccessObject, FlashcardPresenter flashcardPresenter){
+
+    public FlashcardInteractor(FlashcardUserDataAccessInterface userDataAccessObject, FlashcardPresenter flashcardPresenter){
         this.userDataAccessObject = userDataAccessObject;
         this.flashcardPresenter = flashcardPresenter;
     }
+
     public void execute(FlashcardInputData inputData){
 
-    }
-    public static void main(String[] args) {
-        print("Not implemented")
-        //TODO: implement this class
     }
 }

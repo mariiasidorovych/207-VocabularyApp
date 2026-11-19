@@ -11,7 +11,12 @@ public class FlashcardController{
     public FlashcardController(FlashcardInputBoundary inputBoundry){
         this.inputBoundary = inputBoundry;
     }
-    public void execute(String inputData){
-        inputBoundary.execute(new FlashcardInputData(inputData));
+
+    public void executeFlip(){
+        inputBoundary.execute(new FlashcardInputData("flip"));
+    }
+
+    public void executeNext(){
+        inputBoundary.execute(new FlashcardInputData("next"));
     }
 }

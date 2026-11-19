@@ -2,17 +2,17 @@ package use_case.flashcard;
 
 public class FlashcardInputData{
 
-    private String input;
+    private String action;
 
     public FlashcardInputData(String input){
-        this.input = input;
+        this.action = input;
     }
 
     public String getData() {
-        return input;
+        return action;
     }
 
     public void setData(String data) {
-        this.input = data;
+        this.action = data;
     }
 }

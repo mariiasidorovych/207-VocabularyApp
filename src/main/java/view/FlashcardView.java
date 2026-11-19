@@ -1,9 +1,9 @@
 package view;
 
-import interface_adaptor.flashcard.FlashcardController;
-import interface_adaptor.flashcard.FlashcardState;
-import interface_adaptor.flashcard.FlashcardViewModel;
-import interface_adaptor.flashcard.FlashcardViewModelListener;
+import data_access.UserDataAccessObject;
+import interface_adaptor.flashcard.*;
+import use_case.flashcard.FlashcardInputBoundary;
+import use_case.flashcard.FlashcardInteractor;
 
 import javax.swing.*;
 import java.awt.*;
@@ -40,9 +40,17 @@ public class FlashcardView extends JPanel implements ActionListener, FlashcardVi
                 new ActionListener() {
                     public void actionPerformed(ActionEvent evt) {
                         if (evt.getSource().equals(flip)) {
-                            final FlashcardState currentState = flashcardViewModel.getState();
+                            flashcardController.executeFlip();
+                        }
+                    }
+                }
+        );
 
-                            flashcardController.execute("flip");
+        next.addActionListener(
+                new ActionListener() {
+                    public void actionPerformed(ActionEvent evt) {
+                        if (evt.getSource().equals(next)) {
+                            flashcardController.executeNext();
                         }
                     }
                 }
@@ -72,11 +80,24 @@ public class FlashcardView extends JPanel implements ActionListener, FlashcardVi
         this.flashcardController = flashcardController;
     }
 
+    /**
+     * temp main method for testing
+     * @param args unneeded
+     */
     public static void main(String[] args) {
         final JFrame application = new JFrame("User Login Example");
         application.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
-        application.add(new FlashcardView(new FlashcardViewModel()));
+        FlashcardViewModel flashcardViewModel = new FlashcardViewModel();
+        FlashcardView flashcardView = new FlashcardView(flashcardViewModel);
+
+        application.add(flashcardView);
+
+        FlashcardPresenter flashcardPresenter = new FlashcardPresenter(flashcardViewModel);
+        FlashcardInputBoundary flashcardInteractor = new FlashcardInteractor(new UserDataAccessObject(""), flashcardPresenter);
+    FlashcardController flashcardController = new FlashcardController(flashcardInteractor);
+
+        flashcardView.setFlashcardController(flashcardController);
 
         application.pack();
         application.setLocationRelativeTo(null);
