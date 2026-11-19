@@ -29,12 +29,12 @@ public class FlashcardView extends JPanel implements ActionListener, FlashcardVi
         title.setAlignmentX(Component.CENTER_ALIGNMENT);
 
         final JPanel buttons = new JPanel();
-        flip = new JButton("log in");
-        buttons.add(flip);
-        cancel = new JButton("cancel");
+        cancel = new JButton("Cancel");
         buttons.add(cancel);
-        next = new JButton("next");
+        next = new JButton("Next");
         buttons.add(next);
+        flip = new JButton("Flip");
+        buttons.add(flip);
 
         flip.addActionListener(
                 new ActionListener() {
@@ -42,7 +42,7 @@ public class FlashcardView extends JPanel implements ActionListener, FlashcardVi
                         if (evt.getSource().equals(flip)) {
                             final FlashcardState currentState = flashcardViewModel.getState();
 
-                            flashcardController.execute();
+                            flashcardController.execute("flip");
                         }
                     }
                 }
@@ -70,5 +70,16 @@ public class FlashcardView extends JPanel implements ActionListener, FlashcardVi
 
     public void setFlashcardController(FlashcardController flashcardController) {
         this.flashcardController = flashcardController;
+    }
+
+    public static void main(String[] args) {
+        final JFrame application = new JFrame("User Login Example");
+        application.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+
+        application.add(new FlashcardView(new FlashcardViewModel()));
+
+        application.pack();
+        application.setLocationRelativeTo(null);
+        application.setVisible(true);
     }
 }

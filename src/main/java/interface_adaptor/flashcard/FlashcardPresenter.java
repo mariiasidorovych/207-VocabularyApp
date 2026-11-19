@@ -1,6 +1,15 @@
-public class editPresenter{
-    public static void main(String[] args) {
-        print("Not implemented")
-        //TODO: implement this class
+package interface_adaptor.flashcard;
+
+import use_case.flashcard.FlashcardOutputData;
+
+public class FlashcardPresenter{
+    private final FlashcardViewModel viewModel;
+
+    public FlashcardPresenter(FlashcardViewModel viewModel){
+        this.viewModel = viewModel;
+    }
+
+    public void changeCard(FlashcardOutputData outputData){
+
     }
 }

@@ -1,14 +1,18 @@
+package use_case.flashcard;
+
 public class FlashcardInputData{
-    private String data
-    public FlashcardInputData(){
-        this.data = "";
+
+    private String input;
+
+    public FlashcardInputData(String input){
+        this.input = input;
     }
 
     public String getData() {
-        return data;
+        return input;
     }
 
     public void setData(String data) {
-        this.data = data;
+        this.input = data;
     }
 }
