@@ -3,6 +3,7 @@ package data_access;
 import use_case.flashcard.FlashcardUserDataAccessInterface;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class UserDataAccessObject implements FlashcardUserDataAccessInterface {
     private String databaseName;
@@ -12,8 +13,15 @@ public class UserDataAccessObject implements FlashcardUserDataAccessInterface {
     }
 
     @Override
-    public HashMap<String, String> retrieveSavedWords() {
+    public Map<String, String> retrieveSavedWords() {
         return null;
+        //TODO: implement this method
+    }
+
+    public Map<String,String> testSavedWords(){
+        Map<String, String> testWords = new HashMap<>();
+        testWords.put("egg", "the oval object with a hard shell that is produced by female birds, especially chickens, sometimes eaten as food");
+        return testWords;
     }
 
     public static void main(String[] args) {
