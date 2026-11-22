@@ -33,6 +33,7 @@ public class FlashcardView extends JPanel implements ActionListener, FlashcardVi
 
         final JLabel title = new JLabel("Flashcard Learner");
         title.setAlignmentX(Component.CENTER_ALIGNMENT);
+        wordField.setAlignmentX(Component.CENTER_ALIGNMENT);
 
         final JPanel buttons = new JPanel();
         cancel = new JButton("Cancel");
@@ -68,6 +69,7 @@ public class FlashcardView extends JPanel implements ActionListener, FlashcardVi
 
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         this.add(title);
+        this.add(wordField);
         this.add(buttons);
     }
 
@@ -81,7 +83,8 @@ public class FlashcardView extends JPanel implements ActionListener, FlashcardVi
 
     @Override
     public void stateChanged() {
-        wordField.setText(flashcardViewModel.getState().getDisplay());
+        FlashcardState currState = flashcardViewModel.getState();
+        wordField.setText(currState.getDisplay());
     }
 
     public void setFlashcardController(FlashcardController flashcardController) {
@@ -103,7 +106,7 @@ public class FlashcardView extends JPanel implements ActionListener, FlashcardVi
 
         FlashcardPresenter flashcardPresenter = new FlashcardPresenter(flashcardViewModel);
         FlashcardInputBoundary flashcardInteractor = new FlashcardInteractor(new UserDataAccessObject(""), flashcardPresenter);
-    FlashcardController flashcardController = new FlashcardController(flashcardInteractor);
+        FlashcardController flashcardController = new FlashcardController(flashcardInteractor);
 
         flashcardView.setFlashcardController(flashcardController);
 

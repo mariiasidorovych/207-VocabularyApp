@@ -5,7 +5,7 @@ package interface_adaptor.flashcard;
  */
 public class FlashcardState {
 
-    private String display;
+    private String display = "";
 
     public void setDisplay(String display) {
         this.display = display;
