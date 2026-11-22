@@ -1,7 +1,13 @@
 package view;
 
 import data_access.UserDataAccessObject;
-import interface_adaptor.flashcard.*;
+import interface_adaptor.flashcard.FlashcardState;
+import interface_adaptor.flashcard.FlashcardViewModel;
+import interface_adaptor.flashcard.FlashcardViewModelListener;
+import interface_adaptor.flashcard.FlashcardController;
+
+//for temp main method
+import interface_adaptor.flashcard.FlashcardPresenter;
 import use_case.flashcard.FlashcardInputBoundary;
 import use_case.flashcard.FlashcardInteractor;
 
@@ -40,7 +46,8 @@ public class FlashcardView extends JPanel implements ActionListener, FlashcardVi
                 new ActionListener() {
                     public void actionPerformed(ActionEvent evt) {
                         if (evt.getSource().equals(flip)) {
-                            flashcardController.executeFlip(flashcardViewModel.getState().getDisplay());
+                            FlashcardState currState = flashcardViewModel.getState();
+                            flashcardController.executeFlip(currState.getDisplay());
                         }
                     }
                 }
@@ -50,7 +57,8 @@ public class FlashcardView extends JPanel implements ActionListener, FlashcardVi
                 new ActionListener() {
                     public void actionPerformed(ActionEvent evt) {
                         if (evt.getSource().equals(next)) {
-                            flashcardController.executeNext(flashcardViewModel.getState().getDisplay());
+                            FlashcardState currState = flashcardViewModel.getState();
+                            flashcardController.executeNext(currState.getDisplay());
                         }
                     }
                 }

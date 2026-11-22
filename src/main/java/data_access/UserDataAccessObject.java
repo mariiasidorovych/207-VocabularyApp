@@ -14,7 +14,7 @@ public class UserDataAccessObject implements FlashcardUserDataAccessInterface {
 
     @Override
     public Map<String, String> retrieveSavedWords() {
-        return null;
+        return testSavedWords();
         //TODO: implement this method
     }
 

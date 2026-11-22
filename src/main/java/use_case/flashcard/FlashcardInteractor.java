@@ -30,7 +30,11 @@ public class FlashcardInteractor implements FlashcardInputBoundary {
     }
 
     private void executeNext() {
-        currCardIndex += 1;
+        if (currCardIndex < cards.length - 1){
+            currCardIndex += 1;
+        } else {
+            currCardIndex = 0;
+        }
         FlashcardOutputData outputData = new FlashcardOutputData(cards[currCardIndex]);
         flashcardPresenter.changeCard(outputData);
     }
