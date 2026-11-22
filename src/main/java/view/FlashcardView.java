@@ -40,7 +40,7 @@ public class FlashcardView extends JPanel implements ActionListener, FlashcardVi
                 new ActionListener() {
                     public void actionPerformed(ActionEvent evt) {
                         if (evt.getSource().equals(flip)) {
-                            flashcardController.executeFlip();
+                            flashcardController.executeFlip(flashcardViewModel.getState().getDisplay());
                         }
                     }
                 }
@@ -50,7 +50,7 @@ public class FlashcardView extends JPanel implements ActionListener, FlashcardVi
                 new ActionListener() {
                     public void actionPerformed(ActionEvent evt) {
                         if (evt.getSource().equals(next)) {
-                            flashcardController.executeNext();
+                            flashcardController.executeNext(flashcardViewModel.getState().getDisplay());
                         }
                     }
                 }
