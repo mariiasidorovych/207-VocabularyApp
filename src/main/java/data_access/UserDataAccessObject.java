@@ -20,6 +20,9 @@ public class UserDataAccessObject implements FlashcardUserDataAccessInterface {
 
     public Map<String,String> testSavedWords(){
         Map<String, String> testWords = new HashMap<>();
+        testWords.put("architecture", "the art and science of designing and making buildings, or the style of a building");
+        testWords.put("design", "to make or draw plans for something, for example clothes or buildings");
+        testWords.put("implement", "to start using a plan or system");
         testWords.put("egg", "the oval object with a hard shell that is produced by female birds, especially chickens, sometimes eaten as food");
         return testWords;
     }
