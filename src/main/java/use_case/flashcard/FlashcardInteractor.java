@@ -1,23 +1,20 @@
 package use_case.flashcard;
 
+import entity.Deck;
 import interface_adaptor.flashcard.FlashcardPresenter;
-
-import java.util.Map;
 
 public class FlashcardInteractor implements FlashcardInputBoundary {
 
     private final FlashcardUserDataAccessInterface userDataAccessObject;
     private final FlashcardPresenter flashcardPresenter;
-    private final String[] cards;
-    Map<String, String> words;
+    private final Deck deck;
     private int currCardIndex;
 
 
     public FlashcardInteractor(FlashcardUserDataAccessInterface userDataAccessObject, FlashcardPresenter flashcardPresenter){
         this.userDataAccessObject = userDataAccessObject;
         this.flashcardPresenter = flashcardPresenter;
-        this.words = userDataAccessObject.retrieveSavedWords();
-        this.cards = words.keySet().toArray(new String[0]);
+        this.deck = userDataAccessObject.retrieveSavedWords();
         this.currCardIndex = 0;
     }
 
@@ -30,25 +27,25 @@ public class FlashcardInteractor implements FlashcardInputBoundary {
     }
 
     private void executeNext() {
-        if (currCardIndex < cards.length - 1){
+        if (currCardIndex < deck.size() - 1){
             currCardIndex += 1;
         } else {
             currCardIndex = 0;
         }
-        FlashcardOutputData outputData = new FlashcardOutputData(cards[currCardIndex]);
+        FlashcardOutputData outputData = new FlashcardOutputData(deck.get(currCardIndex).getWord());
         flashcardPresenter.changeCard(outputData);
     }
 
     private void executeFlip(FlashcardInputData inputData) {
         if (inputData.getCurrDisplay().isEmpty()){
-            FlashcardOutputData outputData = new FlashcardOutputData(cards[currCardIndex]);
+            FlashcardOutputData outputData = new FlashcardOutputData(deck.get(currCardIndex).getWord());
             flashcardPresenter.changeCard(outputData);
         }
-        else if (words.containsKey(inputData.getCurrDisplay())){
-            FlashcardOutputData outputData = new FlashcardOutputData(words.get(inputData.getCurrDisplay()));
+        else if (deck.isMeaning(inputData.getCurrDisplay())){
+            FlashcardOutputData outputData = new FlashcardOutputData(deck.get(currCardIndex).getWord());
             flashcardPresenter.changeCard(outputData);
         } else {
-            FlashcardOutputData outputData = new FlashcardOutputData(cards[currCardIndex]);
+            FlashcardOutputData outputData = new FlashcardOutputData(deck.get(currCardIndex).getMeaning());
             flashcardPresenter.changeCard(outputData);
         }
     }

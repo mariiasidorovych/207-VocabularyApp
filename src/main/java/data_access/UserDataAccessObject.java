@@ -1,5 +1,7 @@
 package data_access;
 
+import entity.Deck;
+import entity.DeckFactory;
 import use_case.flashcard.FlashcardUserDataAccessInterface;
 
 import java.util.HashMap;
@@ -13,12 +15,15 @@ public class UserDataAccessObject implements FlashcardUserDataAccessInterface {
     }
 
     @Override
-    public Map<String, String> retrieveSavedWords() {
-        return testSavedWords();
+    public Deck retrieveSavedWords() {
+        Map<String,String> testWords = databaseSim();
+        DeckFactory deckFactory = new DeckFactory();
+        Deck deck = deckFactory.create(testWords);
+        return deck;
         //TODO: implement this method
     }
 
-    public Map<String,String> testSavedWords(){
+    public Map<String,String> databaseSim(){
         Map<String, String> testWords = new HashMap<>();
         testWords.put("architecture", "the art and science of designing and making buildings, or the style of a building");
         testWords.put("design", "to make or draw plans for something, for example clothes or buildings");

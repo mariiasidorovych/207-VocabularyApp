@@ -1,6 +1,6 @@
 package use_case.flashcard;
 
-import java.util.Map;
+import entity.Deck;
 
 public interface FlashcardUserDataAccessInterface {
     /**
@@ -9,5 +9,5 @@ public interface FlashcardUserDataAccessInterface {
      *
      * @return a map of the words and the definitions a user has saved
      */
-    public Map<String, String> retrieveSavedWords();
+    public Deck retrieveSavedWords();
 }
