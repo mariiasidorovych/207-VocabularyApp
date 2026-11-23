@@ -1,6 +1,6 @@
 package entity;
 
-import java.util.list;
+import java.util.List;
 
 public class QuizQuestion {
     private final String question;
@@ -10,7 +10,7 @@ public class QuizQuestion {
     public QuizQuestion(String question, List<String> options, int correctIndex) {
         this.question = question;
         this.options = options;
-        this.correctIndex = correctIndex
+        this.correctIndex = correctIndex;
     }
 
     public boolean isCorrect(int selectedIndex) {
@@ -25,7 +25,7 @@ public class QuizQuestion {
         return options;
     }
 
-    public string getCorrectDefinition() {
+    public String getCorrectDefinition() {
         return options.get(correctIndex);
     }
 }
