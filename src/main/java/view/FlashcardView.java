@@ -109,6 +109,7 @@ public class FlashcardView extends JPanel implements ActionListener, FlashcardVi
         FlashcardController flashcardController = new FlashcardController(flashcardInteractor);
 
         flashcardView.setFlashcardController(flashcardController);
+        flashcardView.flashcardController.executeNext("");
 
         application.pack();
         application.setLocationRelativeTo(null);
