@@ -6,7 +6,7 @@ import interface_adaptor.flashcard.FlashcardPresenter;
 public class FlashcardInteractor implements FlashcardInputBoundary {
 
     private final FlashcardUserDataAccessInterface userDataAccessObject;
-    private final FlashcardPresenter flashcardPresenter;
+    private final FlashcardOutputBoundary flashcardPresenter;
     private final Deck deck;
     private int currCardIndex;
 
